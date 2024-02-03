@@ -1,32 +1,41 @@
 const nameForm = document.getElementById("email");
 const password = document.getElementById("password");
 const form = document.getElementById("form");
-const errorElement = document.getElementById("error");
+const errorEmail = document.getElementById("error-email");
+const errorPassword = document.getElementById("error-password");
 
 form.addEventListener("submit", (e) => {
-  let messages = [];
+  let messagesEmail = [];
+  let messagesPassword = [];
 
   if (nameForm.value.trim() === "") {
-    messages.push("Email is required");
+    messagesEmail.push("Email is required");
   }
 
   if (password.value.length <= 6) {
-    messages.push("Password must be longer than 6 characters");
+    messagesPassword.push("Password must be longer than 6 characters");
   }
 
   if (password.value.length >= 20) {
-    messages.push("Password must be less than 20 characters");
+    messagesPassword.push("Password must be less than 20 characters");
   }
 
   if (password.value === "password") {
-    messages.push("Password can't be 'password'");
+    messagesPassword.push("Password can't be 'password'");
   }
 
-  if (messages.length > 0) {
+  if (messagesEmail.length > 0) {
     e.preventDefault();
-    errorElement.innerText = messages.join(", ");
+    errorEmail.innerText = messagesEmail;
   } else {
     // Clear error messages if there are no validation issues
-    errorElement.innerText = "";
+    errorEmail.innerText = "";
+  }
+  if (messagesPassword.length > 0) {
+    e.preventDefault();
+    errorPassword.innerText = messagesPassword;
+  } else {
+    // Clear error messages if there are no validation issues
+    errorPassword.innerText = "";
   }
 });
