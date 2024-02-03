@@ -1,4 +1,4 @@
-const nameForm = document.getElementById("name");
+const nameForm = document.getElementById("email");
 const password = document.getElementById("password");
 const form = document.getElementById("form");
 const errorElement = document.getElementById("error");

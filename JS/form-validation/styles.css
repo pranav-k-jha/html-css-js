@@ -35,6 +35,14 @@ body {
   max-width: 600px;
   border-radius: 20px;
 }
+.error-box {
+    box-shadow: 0 0 15px 0 var(--color);
+    padding: 10px 20px;
+    position: relative;
+    margin: 3px auto;
+    color: antiquewhite;
+    border-radius: 20px;
+}
 
 .login-title {
   margin: 0;
