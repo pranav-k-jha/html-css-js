@@ -7,7 +7,7 @@ form.addEventListener("submit", (e) => {
   let messages = [];
 
   if (nameForm.value.trim() === "") {
-    messages.push("Name is required");
+    messages.push("Email is required");
   }
 
   if (password.value.length <= 6) {
